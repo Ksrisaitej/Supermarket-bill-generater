@@ -29,8 +29,9 @@ print('''
 [two] - Buy the items of the market
 ''')
 option = input('What do you want : ')
+loop = True
 
-while True :
+while loop :
 	if option=='one' :
 	 	print(item_list)
 	if option == 'two' :
@@ -38,7 +39,7 @@ while True :
 	 	print('''
 	 	After shopping Enter 'No, bill it' to bill
 	 	''')
-	 	while True:
+	 	while loop:
 	 		item = input('Enter your item :  ')
 	 		if item in items.keys():
 	 			quan = input('Enter how much qunantity : ')
@@ -65,6 +66,8 @@ while True :
 	 				print(68*'-')
 	 				print(38*' ','Thank you for visit,Visit again')
 	 				print(68*'-')
+                                        loop = False
+
 	
 	 		elif item not in items.keys() :
 	 			print('The item is not available')
